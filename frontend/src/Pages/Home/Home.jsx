@@ -13,6 +13,7 @@ import { toast } from "react-toastify";
 const Home = () => {
   const [institute, setInstitute] = useState(null);
   const [blood, setBlood] = useState(null);
+  const [gender, setGender] = useState(null);
   const [loader, setLoader] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -42,6 +43,7 @@ const Home = () => {
       session,
       occupation,
       blood,
+      gender
     };
 
     const res = await axios.post(
@@ -113,6 +115,39 @@ const Home = () => {
                 placeholder="Type Here"
                 required
               />
+            </div>
+            <div className="col-span-12 lg:col-span-6">
+              <label className="font-semibold text-slate-200">
+                Gender
+                <span className="text-red-400 ml-1 text-xs">
+                  (required)
+                </span>{" "}
+              </label>
+              <Select required onValueChange={(value) => setGender(value)}>
+                <SelectTrigger className="bg-gray-400/40 text-white py-1 focus:ring-0 px-2 focus:border w-full focus:outline-none border border-black rounded-sm">
+                  <SelectValue placeholder="Select Gender" />
+                </SelectTrigger>
+                <SelectContent className="bg-gray-800/90 text-white">
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Male"}
+                  >
+                    Male
+                  </SelectItem>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Female"}
+                  >
+                    Female
+                  </SelectItem>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Others"}
+                  >
+                    Others
+                  </SelectItem>
+                </SelectContent>
+              </Select>
             </div>
             <div className="col-span-12 lg:col-span-6">
               <label className="font-semibold text-slate-200">
