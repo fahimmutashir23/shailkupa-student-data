@@ -17,7 +17,7 @@ const Home = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoader(true)
+    setLoader(true);
     const name = e.target.name.value;
     const phone = e.target.phone.value;
     const email = e.target.email.value;
@@ -29,15 +29,30 @@ const Home = () => {
     const session = e.target.session.value;
     const occupation = e.target.occupation.value;
 
-    const info = {name, phone, email, union, addressShailkupa, addressDhaka, institute, privet, subject, session, occupation, blood}
+    const info = {
+      name,
+      phone,
+      email,
+      union,
+      addressShailkupa,
+      addressDhaka,
+      institute,
+      privet,
+      subject,
+      session,
+      occupation,
+      blood,
+    };
 
-    const res = await axios.post('https://shailkupa-six.vercel.app/users', info)
-    if(res.data.insertedId) {
-      toast.success('Successfully submit')
+    const res = await axios.post(
+      "https://shailkupa-six.vercel.app/users",
+      info
+    );
+    if (res.data.insertedId) {
+      toast.success("Successfully submit");
       e.target.reset();
-      setLoader(false)
+      setLoader(false);
     }
-    
   };
   return (
     <div>
@@ -49,7 +64,9 @@ const Home = () => {
           Student Association of Shailkupa in Dhaka
         </h2>
         <hr />
-        <h4 className="text-xl text-green-400 font-medium font_title text-center mt-3 border py-1">Member Collection Form</h4>
+        <h4 className="text-xl text-green-400 font-medium font_title text-center mt-3 border py-1">
+          Member Collection Form
+        </h4>
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-12 gap-2 mt-4">
             <div className="col-span-12 lg:col-span-6">
@@ -153,15 +170,55 @@ const Home = () => {
                 <SelectTrigger className="bg-gray-400/40 text-white py-1 focus:ring-0 px-2 focus:border w-full focus:outline-none border border-black rounded-sm">
                   <SelectValue placeholder="Select Group" />
                 </SelectTrigger>
-                <SelectContent className="bg-gray-700 text-white">
-                  <SelectItem value={"A+"}>A+</SelectItem>
-                  <SelectItem value={"A-"}>A-</SelectItem>
-                  <SelectItem value={"B+"}>B+</SelectItem>
-                  <SelectItem value={"B-"}>B-</SelectItem>
-                  <SelectItem value={"AB+"}>AB+</SelectItem>
-                  <SelectItem value={"AB-"}>AB-</SelectItem>
-                  <SelectItem value={"O+"}>O+</SelectItem>
-                  <SelectItem value={"O-"}>O-</SelectItem>
+                <SelectContent className="bg-gray-800/90 text-white">
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"A+"}
+                  >
+                    A+
+                  </SelectItem>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"A-"}
+                  >
+                    A-
+                  </SelectItem>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"B+"}
+                  >
+                    B+
+                  </SelectItem>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"B-"}
+                  >
+                    B-
+                  </SelectItem>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"AB+"}
+                  >
+                    AB+
+                  </SelectItem>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"AB-"}
+                  >
+                    AB-
+                  </SelectItem>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"O+"}
+                  >
+                    O+
+                  </SelectItem>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"O-"}
+                  >
+                    O-
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -176,37 +233,37 @@ const Home = () => {
                 <SelectTrigger className="bg-gray-400/40 text-white py-1 focus:ring-0 px-2 focus:border w-full focus:outline-none border border-black rounded-sm">
                   <SelectValue placeholder="Select Institute" />
                 </SelectTrigger>
-                <SelectContent className="bg-gray-700 text-white">
-                  <SelectItem value={"Dhaka University"}>
+                <SelectContent className="bg-gray-800/90 text-white">
+                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Dhaka University"}>
                     Dhaka University
                   </SelectItem>
-                  <SelectItem value={"Jagannath University"}>
+                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Jagannath University"}>
                     Jagannath University
                   </SelectItem>
-                  <SelectItem value={"Jahangirnagar University"}>
+                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Jahangirnagar University"}>
                     Jahangirnagar University
                   </SelectItem>
-                  <SelectItem value={"Dhaka College"}>Dhaka College</SelectItem>
-                  <SelectItem value={"Titumir Govt. College"}>
+                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Dhaka College"}>Dhaka College</SelectItem>
+                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Titumir Govt. College"}>
                     Titumir College
                   </SelectItem>
-                  <SelectItem value={"Govt. Bangla College"}>
+                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Govt. Bangla College"}>
                     Bangla College
                   </SelectItem>
-                  <SelectItem value={"Eden Mohila College"}>
+                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Eden Mohila College"}>
                     Eden College
                   </SelectItem>
-                  <SelectItem value={"Badrunnesa Govt. College"}>
+                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Badrunnesa Govt. College"}>
                     Badrunnesa College
                   </SelectItem>
-                  <SelectItem value={"Government Shaheed Suhrawardy College"}>
+                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Government Shaheed Suhrawardy College"}>
                     Government Shaheed Suhrawardy College
                   </SelectItem>
-                  <SelectItem value={"Kabi Nazrul Government College"}>
+                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Kabi Nazrul Government College"}>
                     Kabi Nazrul Government College
                   </SelectItem>
-                  <SelectItem value={"Privet"}>Privet University</SelectItem>
-                  <SelectItem value={"National"}>
+                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Privet"}>Privet University</SelectItem>
+                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"National"}>
                     Under National University
                   </SelectItem>
                 </SelectContent>
@@ -280,7 +337,7 @@ const Home = () => {
               type="submit"
               className="bg-red-700 py-1 px-4 text-white font-semibold w-full"
             >
-              {loader ? 'loading...' : 'Submit'}
+              {loader ? "loading..." : "Submit"}
             </button>
           </div>
         </form>
