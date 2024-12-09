@@ -5,7 +5,7 @@ const Layout = () => {
   return (
       <div 
       style={{ backgroundImage: `url(${bg})` }}
-      className="bg-cover bg-no-repeat bg-center bg-fixed min-h-screen">
+      className="bg-cover lg:bg-contain bg-no-repeat lg:bg-repeat-x bg-center bg-fixed min-h-screen">
         <Outlet />
       </div>
   );

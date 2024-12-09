@@ -7,6 +7,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import logo from "../../assets/ShailkupaLogo.png";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Home = () => {
   const [institute, setInstitute] = useState(null);
@@ -27,13 +29,18 @@ const Home = () => {
 
     const info = {name, phone, email, union, addressShailkupa, addressDhaka, institute, privet, subject, session, occupation, blood}
 
-    console.log(info);
+    const res = await axios.post('http://localhost:5000/users', info)
+    if(res.data.insertedId) {
+      toast.success('Successfully submit')
+      e.target.reset();
+    }
+    
   };
   return (
     <div>
       <div className="max-w-7xl mx-auto px-1 py-4">
         <div className="flex justify-center">
-          <img src={logo} className="w-1/5" alt="" />
+          <img src={logo} className="w-1/5 lg:w-1/12" alt="" />
         </div>
         <h2 className="text-3xl text-green-400 font-medium font_title text-center mb-1">
           Student Association of Shailkupa in Dhaka
