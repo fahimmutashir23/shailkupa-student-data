@@ -13,9 +13,11 @@ import { toast } from "react-toastify";
 const Home = () => {
   const [institute, setInstitute] = useState(null);
   const [blood, setBlood] = useState(null);
+  const [loader, setLoader] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoader(true)
     const name = e.target.name.value;
     const phone = e.target.phone.value;
     const email = e.target.email.value;
@@ -29,16 +31,17 @@ const Home = () => {
 
     const info = {name, phone, email, union, addressShailkupa, addressDhaka, institute, privet, subject, session, occupation, blood}
 
-    const res = await axios.post('http://localhost:5000/users', info)
+    const res = await axios.post('https://shailkupa-six.vercel.app/users', info)
     if(res.data.insertedId) {
       toast.success('Successfully submit')
       e.target.reset();
+      setLoader(false)
     }
     
   };
   return (
     <div>
-      <div className="max-w-7xl mx-auto px-1 py-4">
+      <div className="max-w-4xl mx-auto px-1 py-4">
         <div className="flex justify-center">
           <img src={logo} className="w-1/5 lg:w-1/12" alt="" />
         </div>
@@ -273,11 +276,11 @@ const Home = () => {
           </div>
           <div className="mt-2">
             <button
-              // disabled={loader === true}
+              disabled={loader === true}
               type="submit"
-              className="bg-red-700 py-1 px-4 text-white font-semibold"
+              className="bg-red-700 py-1 px-4 text-white font-semibold w-full"
             >
-              Submit
+              {loader ? 'loading...' : 'Submit'}
             </button>
           </div>
         </form>
