@@ -28,10 +28,10 @@ async function run() {
       const filter = { phone: user.phone };
       const findPhone = await userCollection.findOne(filter);
       if (findPhone) {
-        return res.send({ message: "phone already exist" });
+        return res.send({status: 400, message: "phone already exist" });
       }
       const result = await userCollection.insertOne(user);
-      res.send(result);
+      res.send({status: 200, message: 'Successfully Submitted'});
     });
 
     app.get("/users", async (req, res) => {
@@ -41,7 +41,8 @@ async function run() {
         user = { phone: phone };
       }
       const result = await userCollection.find(user).toArray();
-      res.send(result);
+      const total = await userCollection.estimatedDocumentCount()
+      res.send({total, result});
     });
 
     // await client.db("admin").command({ ping: 1 });

@@ -50,8 +50,13 @@ const Home = () => {
       "https://shailkupa-six.vercel.app/users",
       info
     );
-    if (res.data.insertedId) {
-      toast.success("Successfully submit");
+
+    if (res.data.status === 400) {
+      toast.success(res.data.message);
+      setLoader(false);
+    }
+    if (res.data.status === 200) {
+      toast.success(res.data.message);
       e.target.reset();
       setLoader(false);
     }
