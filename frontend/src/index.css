@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
+/* .font_title{
+  font-family: "Ubuntu", sans-serif;
+} */
+.font_title{
+  font-family: "Lora", serif;
+}
+
+/* Small Screen no scroll */
+body.no-scroll {
+  overflow: hidden;
+}
+
+.p-rating .p-rating-item.p-rating-item-active .p-rating-icon {
+  color: goldenrod !important;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
