@@ -43,7 +43,7 @@ const Home = () => {
       session,
       occupation,
       blood,
-      gender
+      gender,
     };
 
     const res = await axios.post(
@@ -274,36 +274,76 @@ const Home = () => {
                   <SelectValue placeholder="Select Institute" />
                 </SelectTrigger>
                 <SelectContent className="bg-gray-800/90 text-white">
-                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Dhaka University"}>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Dhaka University"}
+                  >
                     Dhaka University
                   </SelectItem>
-                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Jagannath University"}>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Jagannath University"}
+                  >
                     Jagannath University
                   </SelectItem>
-                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Jahangirnagar University"}>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Jahangirnagar University"}
+                  >
                     Jahangirnagar University
                   </SelectItem>
-                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Dhaka College"}>Dhaka College</SelectItem>
-                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Titumir Govt. College"}>
-                    Titumir College
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Dhaka College"}
+                  >
+                    Dhaka College
                   </SelectItem>
-                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Govt. Bangla College"}>
-                    Bangla College
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Titumir Govt. College"}
+                  >
+                    Titumir Govt. College
                   </SelectItem>
-                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Eden Mohila College"}>
-                    Eden College
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Govt. Bangla College"}
+                  >
+                    Govt. Bangla College
                   </SelectItem>
-                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Badrunnesa Govt. College"}>
-                    Badrunnesa College
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Eden Mohila College"}
+                  >
+                    Eden Mohila College
                   </SelectItem>
-                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Government Shaheed Suhrawardy College"}>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Begum Badrunnesa Government Girls College"}
+                  >
+                    Begum Badrunnesa Government Girls College
+                  </SelectItem>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Government Shaheed Suhrawardy College"}
+                  >
                     Government Shaheed Suhrawardy College
                   </SelectItem>
-                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Kabi Nazrul Government College"}>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Kabi Nazrul Government College"}
+                  >
                     Kabi Nazrul Government College
                   </SelectItem>
-                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"Privet"}>Privet University</SelectItem>
-                  <SelectItem className="hover:bg-gray-500 hover:cursor-pointer" value={"National"}>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"Privet"}
+                  >
+                    Privet University
+                  </SelectItem>
+                  <SelectItem
+                    className="hover:bg-gray-500 hover:cursor-pointer"
+                    value={"National"}
+                  >
                     Under National University
                   </SelectItem>
                 </SelectContent>
